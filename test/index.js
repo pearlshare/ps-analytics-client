@@ -12,7 +12,6 @@ describe("psAnalyticsClient", () => {
 
     it("should send suggestLog", () => {
 
-
       return psAnalyticsClient.sendSuggestLog({
         url: '/pearls/suggest?q=cafes%20in%20london&my-lat=51.530914599999996&my-lon=-0.1820927&my-address=&_limit=8'
       });
