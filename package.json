@@ -2,7 +2,7 @@
   "name": "ps-analytics-client",
   "version": "1.0.0",
   "description": "Simple plugin to store custom analytics data",
-  "main": "index.js",
+  "main": "lib/client.js",
   "scripts": {
     "test": "mocha"
   },
