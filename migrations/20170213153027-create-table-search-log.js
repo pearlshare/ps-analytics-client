@@ -16,13 +16,25 @@ exports.setup = function(options, seedLink) {
 
 exports.up = function(db) {
   return db.runSql(`
-    CREATE TABLE IF NOT EXISTS suggest_log (
+    CREATE TABLE IF NOT EXISTS search_log (
       "id" bigserial PRIMARY KEY,
-      "friendDepth" integer  NULL,
       "keywords" text  NULL,
-      "itemType" character varying(255)  NULL,
+      "collectionId" integer  NULL,
+      "categoryId" integer  NULL,
+      "accountId" integer  NULL,
       "userId" integer  NULL,
-      "myLocation" jsonb  NULL,
+      "lat" double precision  NULL,
+      "lon" double precision  NULL,
+      "radius" double precision  NULL,
+      "categoryIds" integer[]  NULL,
+      "featured" boolean  NULL,
+      "friendDepth" integer  NULL,
+      "likedBy" integer  NULL,
+      "interests" boolean  NULL,
+      "collectionIds" integer[]  NULL,
+      "pearlIds" integer[]  NULL,
+      "ids" integer[]  NULL,
+      "itemType" character varying(255)  NULL,
       "originalUrl" character varying(255)  NULL,
       "createdAt" timestamp with time zone  NULL,
       "sessionId" character varying(255)  NULL

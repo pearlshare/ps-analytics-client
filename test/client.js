@@ -25,13 +25,11 @@ describe("psAnalyticsClient", () => {
         friendDepth: 2,
         keywords: "Some text",
         userId: 10,
-        myLocation: {
-          "my-lat": 67.3,
-          "my-lon": 32.4,
-          "my-address": {
-            
-          }
-        }
+        "my-lat": 67.3,
+        "my-lon": 32.4,
+        "my-address": {
+          country: "UK"
+        },
         itemType: "pearl",
         originalUrl: "https://app.pearlshare.com/pearls?lat=40.7127837&lon=-74.0059413&radius=2000"
       })
