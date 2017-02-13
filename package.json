@@ -4,7 +4,7 @@
   "description": "Simple plugin to store custom analytics data",
   "main": "lib/client.js",
   "scripts": {
-    "test": "DEBUG=psAnalyticsClient mocha"
+    "test": "DEBUG=psAnalyticsClient PS_ANALYTICS_MIGRATIONS_DIR=. mocha"
   },
   "repository": {
     "type": "git",
