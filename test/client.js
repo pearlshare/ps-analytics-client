@@ -4,16 +4,39 @@ const psAnalyticsClient = require("../lib/client");
 describe("psAnalyticsClient", () => {
 
   const options = {
-    pgOptions: "postgres://postgres:badgermushroom@192.168.33.17:5432/ps-api-development"
+    pgOptions: "postgres://postgres:badgermushroom@192.168.33.17:5432/ps-api-test"
   };
-  psAnalyticsClient.init(options);
+
+  before(function () {
+    return psAnalyticsClient.init(options);
+  });
 
   describe("sendSuggestLog", () => {
 
-    it("should send suggestLog", () => {
+    it("should store long 'keywords' suggestLog", () => {
 
       return psAnalyticsClient.sendSuggestLog({
-        url: '/pearls/suggest?q=cafes%20in%20london&my-lat=51.530914599999996&my-lon=-0.1820927&my-address=&_limit=8'
+        url: "/pearls/suggest?q=cafes%20in%20london&my-lat=51.530914599999996&my-lon=-0.1820927&my-address=&_limit=8"
+      });
+    });
+
+    it("should store keys", function () {
+      return psAnalyticsClient.sendSuggestLog({
+        friendDepth: 2,
+        keywords: "Some text",
+        userId: 10,
+        myLocation: {
+          "my-lat": 67.3,
+          "my-lon": 32.4,
+          "my-address": {
+            
+          }
+        }
+        itemType: "pearl",
+        originalUrl: "https://app.pearlshare.com/pearls?lat=40.7127837&lon=-74.0059413&radius=2000"
+      })
+      .then(function (results) {
+        assert.ok(results[0].id);
       });
     });
   });
