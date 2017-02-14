@@ -1,6 +1,6 @@
 {
   "name": "ps-analytics-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple plugin to store custom analytics data",
   "main": "lib/client.js",
   "scripts": {
