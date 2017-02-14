@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/pearlshare/ps-analytics-client#readme",
   "dependencies": {
-    "db-migrate": "^0.10.0-beta.20",
+    "db-migrate": "https://github.com/pearlshare/node-db-migrate.git",
     "db-migrate-pg": "^0.1.11",
     "debug": "^2.6.0",
     "is-json": "^2.0.1",
